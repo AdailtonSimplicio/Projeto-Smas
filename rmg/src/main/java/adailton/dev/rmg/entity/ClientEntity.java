@@ -1,15 +1,12 @@
 package adailton.dev.rmg.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.sun.istack.NotNull;
 import lombok.*;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
+
 @Data
-@Getter
-@Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,7 +41,8 @@ public class ClientEntity {
     private String etnia;
 
     private String escolaridade;
-    private String endereco;
+
+    private List<AddressEntity> endereco;
 
     @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
